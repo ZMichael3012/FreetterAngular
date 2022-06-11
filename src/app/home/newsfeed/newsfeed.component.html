@@ -1,0 +1,21 @@
+<div class="card" id="newsfeed" style="border-radius: 10px; background-color: white; padding: 5px;">
+  <div class="card-body" style="padding: 10px 10px; display: flex; justify-content: end;">
+    <button pButton class="p-button-secondary p-button-outlined" (click)="displayCreateTweetDialog()" style="width: 85%; border-radius: 50px;">What's going on?</button>
+  </div>
+</div>
+
+<app-create-tweet
+(creatingTweetEvent)="tweetCreatedEventHandler()">
+</app-create-tweet>
+
+<hr color="#bfbfbf" size="1">
+
+<div *ngFor="let tweet of tweets">
+  <app-tweet
+  [tweet]="tweet"
+  id="{{tweet.id}}"
+  (likingTweetEvent)="likedTweetEventHandler()"
+  (retweetingTweetEvent)="retweetedEventHandler()">
+  </app-tweet>
+</div>
+

@@ -1,0 +1,10 @@
+<p-dialog [draggable]="false" header="Create tweet" [(visible)]="displayCreateTweetDialog" [modal]="true" [style]="{'width': '500px', 'height': '500px'}">
+  <ng-template pTemplate="body">
+    <textarea rows="7" [maxlength]="limit" pInputTextarea [autoResize]="autoResize" [(ngModel)]="content" style="width: 100%; margin-top: 5px"></textarea>
+    <p id="result" style="width: 100%;text-align: right; padding-right: 10px; color: darkgray; font-size: small">{{content.length}}/{{limit}}</p>
+  </ng-template>
+
+  <ng-template pTemplate="footer">
+    <p-button icon="pi pi-check" type="submit" (click)="createTweet()" label="Publish" styleClass="p-button-text"></p-button>
+  </ng-template>
+</p-dialog>
