@@ -1,23 +1,26 @@
-<div class="card" style="border-radius: 10px; background-color: white; margin: 10px 0; padding: 5px; border: 1px black">
-  <div class="card-header" style="padding: 0 10px">
-    <h2>Tweet</h2>
+<div class="card" id="{{tweet.id}}" style="border-radius: 10px; background-color: white; margin: 10px 0; padding: 5px; border: 1px black">
+  <div class="card-header" style="padding: 0 10px; display: flex; width: 100%">
+    <h2 style="left: 0">Tweet</h2>
+
+    <div style="width: 100%">
+      <button pButton class="p-button-text p-button-secondary" icon="pi pi-ellipsis-h" (click)="menu.toggle($event)" style="float: right"></button>
+      <p-menu #menu [model]="items" [popup]="true"></p-menu>
+    </div>
   </div>
 
   <div class="card-body" style="padding: 0 10px">
     <p style="wordWrap: break-word; white-space: pre-line">
       {{tweet.content}}
     </p>
-    <div *ngIf="tweet.parent">
 
-    <app-parent-tweet
-      [tweet_id]="tweet.parent!.id">
+    <div *ngIf="tweet.parent !== null">
+      <app-parent-tweet
+        [tweet_id]="tweet.parent!.id">
       </app-parent-tweet>
     </div>
-    <hr color="#f1f1f1" size="1">
+
+    <p-divider></p-divider>
   </div>
-
-
-
 
   <span style="padding: 0 10px; font-size: 10px; color: darkgray">
     <i class="pi pi-heart-fill" style="font-size: 10px; margin-right: 3px; color: lightblue"></i>

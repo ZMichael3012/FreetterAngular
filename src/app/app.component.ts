@@ -16,8 +16,4 @@ export class AppComponent implements OnInit{
   hasLoggedIn(){
     return false
   }
-
-  login() {
-
-  }
 }

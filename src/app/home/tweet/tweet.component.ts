@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Tweet} from "../../../shared/entity/tweet";
 import {TweetManagementService} from "../shared/services/tweet-management.service";
+import {MenuItem} from "primeng/api";
 
 @Component({
   selector: 'app-tweet',
@@ -12,6 +13,14 @@ export class TweetComponent implements OnInit {
   tweet!: Tweet;
   @Output() likingTweetEvent = new EventEmitter()
   @Output() retweetingTweetEvent = new EventEmitter()
+  @Output() deletingTweetEvent = new EventEmitter()
+
+  items: MenuItem[] = [
+    {
+      label: "Delete",
+      command: () => {this.deleteTweet(this.tweet.id)}
+    }
+  ];
 
   constructor(
     private tweetManagementService: TweetManagementService
@@ -35,6 +44,12 @@ export class TweetComponent implements OnInit {
   retweetTweet(id: any, action: string = 'retweet'){
     this.tweetManagementService.actOnTweet(id, action).subscribe(() => {
       this.retweetingTweetEvent.emit()
+    })
+  }
+
+  deleteTweet(id: any){
+    this.tweetManagementService.deleteTweet(id).subscribe(() => {
+      this.deletingTweetEvent.emit()
     })
   }
 }

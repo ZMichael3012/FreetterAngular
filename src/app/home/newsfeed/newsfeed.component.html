@@ -8,14 +8,15 @@
 (creatingTweetEvent)="tweetCreatedEventHandler()">
 </app-create-tweet>
 
-<hr color="#bfbfbf" size="1">
+<p-divider></p-divider>
 
 <div *ngFor="let tweet of tweets">
   <app-tweet
   [tweet]="tweet"
   id="{{tweet.id}}"
   (likingTweetEvent)="likedTweetEventHandler()"
-  (retweetingTweetEvent)="retweetedEventHandler()">
+  (retweetingTweetEvent)="retweetedEventHandler()"
+  (deletingTweetEvent)="deletedTweetEventHandler()">
   </app-tweet>
 </div>
 

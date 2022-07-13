@@ -10,17 +10,18 @@ import {Tweet} from "../../../shared/entity/tweet";
 export class ParentTweetComponent implements OnInit {
 
   @Input()
-  tweet_id!: any;
-  tweet!: Tweet;
+  tweet_id?: any | undefined;
+  tweet?: Tweet;
 
   constructor(
     private tweetManagementService: TweetManagementService
   ) { }
 
   ngOnInit(): void {
-    this.tweetManagementService.getTweetById(this.tweet_id).subscribe(tweet => {
-      this.tweet = tweet
-    })
+    if(typeof this.tweet_id !== undefined){
+      this.tweetManagementService.getTweetById(this.tweet_id!).subscribe(tweet => {
+        this.tweet = tweet
+      })
+    }
   }
-
 }

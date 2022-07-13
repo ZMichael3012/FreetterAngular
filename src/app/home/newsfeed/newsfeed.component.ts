@@ -45,4 +45,8 @@ export class NewsfeedComponent implements OnInit {
   retweetedEventHandler() {
     this.getTweets()
   }
+
+  deletedTweetEventHandler() {
+    this.getTweets()
+  }
 }

@@ -1,0 +1,7 @@
+<p-dialog [draggable]="false" [(visible)]="displayTweetDetailsDialog" [modal]="true" [style]="{'width': '500px'}">
+  <ng-template pTemplate="body">
+    <app-tweet
+    [tweet]="tweet">
+    </app-tweet>
+  </ng-template>
+</p-dialog>

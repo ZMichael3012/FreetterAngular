@@ -1,17 +1,17 @@
-<div class="card" style="border-radius: 10px; background-color: white; margin: 10px 0; padding: 5px; border: 1px black">
+<div class="card" id="parent-{{tweet!.id}}" style="border-radius: 10px; background-color: white; margin: 10px 0; padding: 5px; border: 1px black">
   <div class="card-header" style="padding: 0 10px">
     <h2>Tweet</h2>
   </div>
 
   <div class="card-body" style="padding: 0 10px">
     <p style="wordWrap: break-word; white-space: pre-line">
-      {{tweet.content}}
+      {{tweet!.content}}
     </p>
 
-    <div *ngIf="tweet.parent">
-      <app-parent-tweet
-      [tweet_id]="tweet.parent.id">
-      </app-parent-tweet>
+    <div *ngIf="tweet!.parent! !== null">
+      <app-d-parent-tweet
+      [tweet_id]="tweet!.parent!.id">
+      </app-d-parent-tweet>
     </div>
   </div>
 </div>

@@ -10,6 +10,8 @@ import { CreateTweetComponent } from './create-tweet/create-tweet.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { ParentTweetComponent } from './parent-tweet/parent-tweet.component';
+import { DParentTweetComponent } from './d-parent-tweet/d-parent-tweet.component';
+import { TweetDetailsComponent } from './tweet-details/tweet-details.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { ParentTweetComponent } from './parent-tweet/parent-tweet.component';
     NewsfeedComponent,
     TweetComponent,
     CreateTweetComponent,
-    ParentTweetComponent
+    ParentTweetComponent,
+    DParentTweetComponent,
+    TweetDetailsComponent
   ],
   imports: [
     CommonModule,

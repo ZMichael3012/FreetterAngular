@@ -8,6 +8,8 @@ import { MenuModule } from 'primeng/menu';
 import {MenubarModule} from "primeng/menubar";
 import {TableModule} from "primeng/table";
 import {InputTextareaModule} from "primeng/inputtextarea";
+import {DividerModule} from "primeng/divider";
+import {PasswordModule} from "primeng/password";
 
 const PrimeNgModules = [
   InputTextModule,
@@ -17,7 +19,9 @@ const PrimeNgModules = [
   MenuModule,
   MenubarModule,
   TableModule,
-  InputTextareaModule
+  InputTextareaModule,
+  DividerModule,
+  PasswordModule
 ]
 
 @NgModule({

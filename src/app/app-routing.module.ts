@@ -4,6 +4,11 @@ import {HomeComponent} from "./home/home.component";
 
 const routes: Routes = [
   {
+    path: 'account',
+    pathMatch: 'prefix',
+    loadChildren: () => import('./account/account.module').then(m => m.AccountModule)
+  },
+  {
     path: '',
     pathMatch: "prefix",
     loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
